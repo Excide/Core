@@ -1,0 +1,17 @@
+MESSAGES:
+  UPTIME_MESSAGE: "&AThe server has been up for &c%UPTIME%&a."
+  GLOBAL_CHAT_MUTED: "&cGlobal chat is currently muted, try again later!"
+  GLOBAL_CHAT_MUTED_BROADCAST: "&aGlobal chat has been muted by %PLAYER%."
+  GLOBAL_CHAT_UNMUTED_BROADCAST: "&aGlobal chat has been unmuted by %PLAYER%."
+  CLEARCHAT_BROADCAST: "&aChat has been cleared by &c%PLAYER%."
+
+RULES:
+  - "&7------------------------------"
+  - "&a1. Be kind."
+  - "&a2. Be nice."
+  - "&a3. Don't cheat."
+  - "&a4. Use common sense."
+  - "&7------------------------------"
+
+TIMES:
+  JEDIS_PUSH: 300
