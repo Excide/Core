@@ -35,7 +35,17 @@ public class MySQLAdapter
         mySQL.Connect(HOST, DATABASE, USER, PASSWORD);
 
     }
-
-
-
+    
+    public void disconnect()
+    {
+        
+        if(mySQL != null)
+        {
+            
+            mySQL = null;
+            
+        }
+        
+    }
+       
 }
