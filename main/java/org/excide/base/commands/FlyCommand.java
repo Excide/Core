@@ -24,11 +24,7 @@ import static org.excide.Core.plugin;
 public class FlyCommand implements CommandExecutor
 {
 
-    //TODO: FINISH THIS CLASS
-    // MYSQL state
-
     public static List<UUID> flyCache;
-    public ResultSet resultSet;
 
     public FlyCommand()
     {
