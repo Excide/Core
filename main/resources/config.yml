@@ -4,6 +4,9 @@ MESSAGES:
   GLOBAL_CHAT_MUTED_BROADCAST: "&aGlobal chat has been muted by %PLAYER%."
   GLOBAL_CHAT_UNMUTED_BROADCAST: "&aGlobal chat has been unmuted by %PLAYER%."
   CLEARCHAT_BROADCAST: "&aChat has been cleared by &c%PLAYER%."
+  FLYING_ON_MESSAGE: "&aYou are now flying."
+  FLYING_OFF_MESSAGE: "&aYou are no longer flying."
+  TARGET-NULL: "That player does not exist or is not online"
 
 RULES:
   - "&7------------------------------"

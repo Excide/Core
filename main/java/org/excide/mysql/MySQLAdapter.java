@@ -1,10 +1,11 @@
 package org.excide.mysql;
 
 import lombok.Getter;
+import org.bukkit.Bukkit;
+import paulek.mysql.Main;
+import paulek.mysql.MySQL;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import static org.excide.Core.plugin;
 
 /**
  * Project: Core
@@ -15,39 +16,26 @@ import java.sql.SQLException;
 public class MySQLAdapter
 {
 
-    @Getter public Connection connection;
+    @Getter public String USER;
+    @Getter public String PASSWORD;
+    @Getter public String DATABASE;
+    @Getter public String HOST;
+    @Getter public MySQL mySQL;
 
     public MySQLAdapter()
     {
 
-        try
-        {
+        USER = plugin.getPlugin().getConfig().getString("MYSQL.USER");
+        PASSWORD = plugin.getPlugin().getConfig().getString("MYSQL.PASSWORD");
+        DATABASE = plugin.getPlugin().getConfig().getString("MYSQL.DATABASE");
+        HOST = plugin.getPlugin().getConfig().getString("MYSQL.HOST");
 
-            Class.forName("com.mysql.jdbc.Drive");
+        mySQL = new MySQL((Main) Bukkit.getServer().getPluginManager().getPlugin("MySQL"), "SQL");
 
-        }
-        catch (ClassNotFoundException exception)
-        {
-
-            System.out.println();
-
-            exception.printStackTrace();
-
-        }
-
-        try
-        {
-
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/excide", "root", "123456");
-
-        }
-        catch (SQLException exception)
-        {
-
-            exception.printStackTrace();
-
-        }
+        mySQL.Connect(HOST, DATABASE, USER, PASSWORD);
 
     }
+
+
 
 }

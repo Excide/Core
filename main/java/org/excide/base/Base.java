@@ -1,9 +1,7 @@
 package org.excide.base;
 
-import org.excide.base.commands.ClearChatCommand;
-import org.excide.base.commands.MuteChatCommand;
-import org.excide.base.commands.RulesCommand;
-import org.excide.base.commands.ServerUptimeCommand;
+import org.excide.base.commands.*;
+import org.excide.base.listeners.FlyListener;
 import org.excide.base.listeners.MuteChatListener;
 
 /**
@@ -22,8 +20,10 @@ public class Base
         new MuteChatCommand();
         new ServerUptimeCommand();
         new RulesCommand();
+        new FlyCommand();
 
         new MuteChatListener();
+        new FlyListener();
 
     }
 
