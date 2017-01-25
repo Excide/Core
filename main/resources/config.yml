@@ -8,6 +8,7 @@ MESSAGES:
   FLYING_OFF_MESSAGE: "&aYou are no longer flying."
   TARGET-NULL: "&cThat player does not exist or is not online"
   SETSPAWN_MESSAGE: "&aYou have set spawn."
+  BROADCAST_PREFIX_MESSAGE: "&7[&eExcide&7]"
 
 RULES:
   - "&7------------------------------"
