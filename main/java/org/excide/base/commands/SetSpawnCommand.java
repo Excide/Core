@@ -60,6 +60,14 @@ public class SetSpawnCommand implements CommandExecutor
                 plugin.getPlugin().saveConfig();
 
             }
+            else
+            {
+
+                sender.sendMessage("Unknown command. Type \"/help\" for help.");
+
+                return true;
+
+            }
 
         }
 

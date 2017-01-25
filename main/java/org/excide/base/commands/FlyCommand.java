@@ -58,20 +58,33 @@ public class FlyCommand implements CommandExecutor
                 if(args.length == 1)
                 {
 
-                    Player target = Bukkit.getPlayer(args[0]);
-
-                    if(target == null)
+                    if (player.hasPermission("core.command.fly.others"))
                     {
 
-                        player.sendMessage(ChatColor.translateAlternateColorCodes('&', plugin.getPlugin().getConfig().getString("MESSAGES.TARGET-NULL")));
+                        Player target = Bukkit.getPlayer(args[0]);
 
-                        return false;
+                        if (target == null)
+                        {
+
+                            player.sendMessage(ChatColor.translateAlternateColorCodes('&', plugin.getPlugin().getConfig().getString("MESSAGES.TARGET-NULL")));
+
+                            return false;
+
+                        }
+
+                        setFlying(target);
+
+                        return true;
 
                     }
+                    else
+                    {
 
-                    setFlying(target);
+                        sender.sendMessage("Unknown command. Type \"/help\" for help.");
 
-                    return true;
+                        return true;
+
+                    }
 
                 }
 
