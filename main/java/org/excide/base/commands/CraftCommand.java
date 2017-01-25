@@ -4,8 +4,7 @@ import net.md_5.bungee.api.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-
-import java.util.List;
+import org.bukkit.entity.Player;
 
 import static org.excide.Core.plugin;
 
@@ -13,35 +12,31 @@ import static org.excide.Core.plugin;
  * Project: Core
  * Created by: defcon
  * Package: org.excide.base.commands
- * Time: 2017-01-22
+ * Time: 2017-01-24
  */
-public class RulesCommand implements CommandExecutor
+public class CraftCommand implements CommandExecutor
 {
 
-    public RulesCommand()
+    public CraftCommand()
     {
 
-        plugin.getPlugin().getCommand("rules").setExecutor(this);
 
     }
 
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args)
     {
 
-        if(command.getName().equalsIgnoreCase("rules"))
+        Player player = (Player) sender;
+
+        if(command.getName().equalsIgnoreCase("craft"))
         {
 
-            if(sender.hasPermission("core.command.rules"))
+            if(sender.hasPermission("core.command.craft"))
             {
 
-                for(String rule : plugin.getPlugin().getConfig().getStringList("RULES"))
-                {
+                player.openWorkbench(player.getLocation(), true);
 
-                    sender.sendMessage(ChatColor.translateAlternateColorCodes('&', rule));
-
-                    return true;
-
-                }
+                return true;
 
             }
             else

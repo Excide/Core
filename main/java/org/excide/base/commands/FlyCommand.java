@@ -31,6 +31,8 @@ public class FlyCommand implements CommandExecutor
 
         flyCache = new ArrayList<UUID>();
 
+        plugin.getPlugin().getCommand("fly").setExecutor(this);
+
     }
 
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args)
@@ -49,6 +51,8 @@ public class FlyCommand implements CommandExecutor
 
                     setFlying(player);
 
+                    return true;
+
                 }
 
                 if(args.length == 1)
@@ -61,11 +65,23 @@ public class FlyCommand implements CommandExecutor
 
                         player.sendMessage(ChatColor.translateAlternateColorCodes('&', plugin.getPlugin().getConfig().getString("MESSAGES.TARGET-NULL")));
 
+                        return false;
+
                     }
 
                     setFlying(target);
 
+                    return true;
+
                 }
+
+            }
+            else
+            {
+
+                sender.sendMessage("Unknown command. Type \"/help\" for help.");
+
+                return true;
 
             }
 

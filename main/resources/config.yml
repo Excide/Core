@@ -6,7 +6,8 @@ MESSAGES:
   CLEARCHAT_BROADCAST: "&aChat has been cleared by &c%PLAYER%."
   FLYING_ON_MESSAGE: "&aYou are now flying."
   FLYING_OFF_MESSAGE: "&aYou are no longer flying."
-  TARGET-NULL: "That player does not exist or is not online"
+  TARGET-NULL: "&cThat player does not exist or is not online"
+  SETSPAWN_MESSAGE: "&aYou have set spawn."
 
 RULES:
   - "&7------------------------------"
